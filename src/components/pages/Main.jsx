@@ -6,15 +6,20 @@ import NewsList from "../newsList/newsList";
 import Skeleton from "../skeleton/skeleton";
 import Pagination from "../pagination/pagination";
 import Categories from "../categories/categories";
+import Search from "../search/search";
+import { useDebounce } from "../healper/hooks/useDebounce";
 
 const Main = () => {
   const [news, setNews] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [categories, setCategories] = useState([]);
+  const [keywords, setKeywords] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const totalPages = 10;
   const pageSize = 10;
+
+  const debouncedKeywords = useDebounce(keywords, 1500);
 
   const fetchNews = async (currentPage) => {
     try {
@@ -23,6 +28,7 @@ const Main = () => {
         page_number: currentPage,
         page_size: pageSize,
         category: selectedCategory === "All" ? null : selectedCategory,
+        keywords: debouncedKeywords,
       });
       setNews(responce.news);
       setLoading(false);
@@ -46,7 +52,7 @@ const Main = () => {
 
   useEffect(() => {
     fetchNews(currentPage);
-  }, [currentPage, selectedCategory]);
+  }, [currentPage, selectedCategory, debouncedKeywords]);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -72,6 +78,8 @@ const Main = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
+
+        <Search keywords={keywords} setKeywords={setKeywords} />
 
         {news.length > 0 && !isLoading ? (
           <NewsBanner item={news[0]} />
