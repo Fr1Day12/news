@@ -1,10 +1,28 @@
-import { TOTAL_PAGES } from "../constants/constants";
+import { getNews } from "../../api/apiNews";
+import { PAGE_SIZE, TOTAL_PAGES } from "../constants/constants";
+import { useDebounce } from "../healper/hooks/useDebounce";
+import { useFetch } from "../healper/hooks/useFetch";
+import { useFilters } from "../healper/hooks/useFilters";
 import NewsFilters from "../newsFilters/newsFilters";
 import NewsList from "../newsList/newsList";
-import Pagination from "../pagination/pagination";
+import PaginationWrapper from "../paginationWrapper/paginationWrapper";
 import styles from "./styles.module.css";
 
-const NewsByFilters = ({ filters, changeFilter, isLoading, news }) => {
+const NewsByFilters = () => {
+  const { filters, changeFilter } = useFilters({
+    page_number: 1,
+    page_size: PAGE_SIZE,
+    category: null,
+    keywords: "",
+  });
+
+  const debouncedKeywords = useDebounce(filters.keywords, 1500);
+
+  const { data, isLoading } = useFetch(getNews, {
+    ...filters,
+    keywords: debouncedKeywords,
+  });
+
   const handleNextPage = () => {
     if (filters.page_number < TOTAL_PAGES) {
       changeFilter("page_number", filters.page_number + 1);
@@ -25,23 +43,16 @@ const NewsByFilters = ({ filters, changeFilter, isLoading, news }) => {
     <section className={styles.section}>
       <NewsFilters changeFilter={changeFilter} filters={filters} />
 
-      <Pagination
+      <PaginationWrapper
+        top
+        bottom
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
         handlePageClick={handlePageClick}
         totalPages={TOTAL_PAGES}
-        currentPage={filters.page_number}
-      />
-
-      <NewsList news={news} isLoading={isLoading} />
-
-      <Pagination
-        handleNextPage={handleNextPage}
-        handlePreviousPage={handlePreviousPage}
-        handlePageClick={handlePageClick}
-        totalPages={TOTAL_PAGES}
-        currentPage={filters.page_number}
-      />
+        currentPage={filters.page_number}>
+        <NewsList news={data?.news} isLoading={isLoading} />
+      </PaginationWrapper>
     </section>
   );
 };
