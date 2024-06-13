@@ -1,4 +1,4 @@
-import Skeleton from "../../skeleton/skeleton";
+import Skeleton from "../../Skeleton/Skeleton";
 
 function withSkeleton(Component, type, count, direction) {
   return function withSkeleton(props) {

@@ -1,5 +1,5 @@
-import withSkeleton from "../healper/hocs/withSkeleton";
-import NewsBanner from "../newsBanner/newsBanner";
+import withSkeleton from "../healper/hocs/WithSkeleton";
+import NewsBanner from "../NewsBanner/NewsBanner";
 import styles from "./styles.module.css";
 
 const BannersList = ({ banners }) => {
