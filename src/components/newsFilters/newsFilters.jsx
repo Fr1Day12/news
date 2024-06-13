@@ -1,5 +1,5 @@
 import { getCategories } from "../../api/apiNews";
-import Categories from "../categories/categories";
+import Categories from "../Categories/Categories";
 import { useFetch } from "../healper/hooks/useFetch";
 import Search from "../search/search";
 import Slider from "../Slider/Slider";

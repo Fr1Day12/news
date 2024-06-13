@@ -1,5 +1,5 @@
-import withSkeleton from "../healper/hocs/withSkeleton";
-import NewsItem from "../newsItem/newsItem";
+import withSkeleton from "../healper/hocs/WithSkeleton";
+import NewsItem from "../NewsItem/NewsItem";
 import styles from "./styles.module.css";
 
 const NewsList = ({ news }) => {
