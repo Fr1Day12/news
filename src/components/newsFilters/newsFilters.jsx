@@ -1,7 +1,7 @@
 import { getCategories } from "../../api/apiNews";
 import Categories from "../Categories/Categories";
 import { useFetch } from "../healper/hooks/useFetch";
-import Search from "../search/search";
+import Search from "../Search/Search";
 import Slider from "../Slider/Slider";
 import styles from "./styles.module.css";
 

@@ -27,9 +27,4 @@ const Categories = forwardRef(
   }
 );
 
-
-Categories.displayName = "Categories";
-
-
-
 export default Categories;
