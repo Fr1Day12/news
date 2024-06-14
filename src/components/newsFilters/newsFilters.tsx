@@ -1,9 +1,9 @@
 import { getCategories } from "../../api/apiNews";
-import Categories from "../categories/categories";
+import Categories from "../Categories/Categories";
 import { useFetch } from "../healper/hooks/useFetch";
 import { CategoriesApiResponse, IFilters } from "../interfaces";
-import Search from "../search/search";
-import Slider from "../slider/slider";
+import Search from "../Search/Search";
+import Slider from "../Slider/Slider";
 import styles from "./styles.module.css";
 
 interface Props {

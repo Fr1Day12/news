@@ -4,9 +4,9 @@ import { useDebounce } from "../healper/hooks/useDebounce";
 import { useFetch } from "../healper/hooks/useFetch";
 import { useFilters } from "../healper/hooks/useFilters";
 import { NewsApiResponse, ParamsType } from "../interfaces";
-import NewsFilters from "../newsFilters/newsFilters";
-import NewsList from "../newsList/newsList";
-import PaginationWrapper from "../paginationWrapper/paginationWrapper";
+import NewsFilters from "../NewsFilters/NewsFilters";
+import NewsList from "../NewsList/NewsList";
+import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
 
 import styles from "./styles.module.css";
 
