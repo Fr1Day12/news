@@ -1,5 +1,5 @@
 import { IPaginationProps } from "../interfaces";
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../pagination/pagination";
 
 interface Props {
   top?: boolean;
