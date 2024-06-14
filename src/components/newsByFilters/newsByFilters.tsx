@@ -7,6 +7,7 @@ import { NewsApiResponse, ParamsType } from "../interfaces";
 import NewsFilters from "../newsFilters/newsFilters";
 import NewsList from "../newsList/newsList";
 import PaginationWrapper from "../paginationWrapper/paginationWrapper";
+
 import styles from "./styles.module.css";
 
 const NewsByFilters = () => {
