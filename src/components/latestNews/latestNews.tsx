@@ -1,5 +1,5 @@
 import { getLatestNews } from "../../api/apiNews";
-import BannersList from "../BannersList/BannersList";
+import BannersList from "../bannersList/bannersList";
 import { useFetch } from "../healper/hooks/useFetch";
 import { NewsApiResponse } from "../interfaces";
 import styles from "./styles.module.css";

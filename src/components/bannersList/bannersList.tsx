@@ -1,6 +1,6 @@
-import withSkeleton from "../healper/hocs/WithSkeleton";
+import withSkeleton from "../healper/hocs/withSkeleton";
 import { INews } from "../interfaces";
-import NewsBanner from "../NewsBanner/NewsBanner";
+import NewsBanner from "../newsBanner/newsBanner";
 import styles from "./styles.module.css";
 
 interface Props {
