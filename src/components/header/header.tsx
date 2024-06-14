@@ -3,7 +3,7 @@ import { formateDate } from "../healper/formateDate";
 import styles from "./styles.module.css";
 
 const Header = () => {
-  const [currentDate, setCurrentDate] = useState("");
+  const [currentDate, setCurrentDate] = useState(() => formateDate(new Date()));
 
   useEffect(() => {
     const updateDate = () => {
