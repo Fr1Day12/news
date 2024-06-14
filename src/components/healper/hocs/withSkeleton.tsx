@@ -1,5 +1,5 @@
 import { DirectionType, SkeletonType } from "../../interfaces";
-import Skeleton from "../../skeleton/skeleton";
+import Skeleton from "../../Skeleton/Skeleton";
 
 interface Props {
   isLoading: boolean;
