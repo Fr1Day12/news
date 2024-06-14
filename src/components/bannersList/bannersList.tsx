@@ -1,8 +1,13 @@
 import withSkeleton from "../healper/hocs/withSkeleton";
+import { INews } from "../interfaces";
 import NewsBanner from "../newsBanner/newsBanner";
 import styles from "./styles.module.css";
 
-const BannersList = ({ banners }) => {
+interface Props {
+  banners?: INews[] | null;
+}
+
+const BannersList = ({ banners }: Props) => {
   return (
     <ul className={styles.banners}>
       {banners?.map((banner) => {
@@ -12,6 +17,11 @@ const BannersList = ({ banners }) => {
   );
 };
 
-const BannersListWithSkeleton = withSkeleton(BannersList, "banner", 10, "row");
+const BannersListWithSkeleton = withSkeleton<Props>(
+  BannersList,
+  "banner",
+  10,
+  "row"
+);
 
 export default BannersListWithSkeleton;

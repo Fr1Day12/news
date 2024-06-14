@@ -1,5 +1,5 @@
-export const formateDate = (date) => {
-  const options = {
+export const formateDate = (date: Date): string => {
+  const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
     day: "numeric",

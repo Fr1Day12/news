@@ -3,6 +3,7 @@ import { PAGE_SIZE, TOTAL_PAGES } from "../constants/constants";
 import { useDebounce } from "../healper/hooks/useDebounce";
 import { useFetch } from "../healper/hooks/useFetch";
 import { useFilters } from "../healper/hooks/useFilters";
+import { NewsApiResponse, ParamsType } from "../interfaces";
 import NewsFilters from "../newsFilters/newsFilters";
 import NewsList from "../newsList/newsList";
 import PaginationWrapper from "../paginationWrapper/paginationWrapper";
@@ -18,7 +19,7 @@ const NewsByFilters = () => {
 
   const debouncedKeywords = useDebounce(filters.keywords, 1500);
 
-  const { data, isLoading } = useFetch(getNews, {
+  const { data, isLoading } = useFetch<NewsApiResponse, ParamsType>(getNews, {
     ...filters,
     keywords: debouncedKeywords,
   });
@@ -35,7 +36,7 @@ const NewsByFilters = () => {
     }
   };
 
-  const handlePageClick = (pageNumber) => {
+  const handlePageClick = (pageNumber: number) => {
     changeFilter("page_number", pageNumber);
   };
 
