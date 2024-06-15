@@ -1,5 +1,5 @@
 import { formatTimeAgo } from "../healper/formatTimeAgo";
-import { INews } from "../interfaces";
+import { INews } from "../../interfaces";
 import styles from "./styles.module.css";
 
 interface Props {

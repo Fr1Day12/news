@@ -1,5 +1,5 @@
 import withSkeleton from "../healper/hocs/withSkeleton";
-import { INews } from "../interfaces";
+import { INews } from "../../interfaces";
 import NewsItem from "../newsItem/newsItem";
 import styles from "./styles.module.css";
 
