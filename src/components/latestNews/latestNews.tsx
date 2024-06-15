@@ -1,11 +1,9 @@
-import { getLatestNews } from "../../api/apiNews";
 import BannersList from "../bannersList/bannersList";
-import { useFetch } from "../healper/hooks/useFetch";
-import { NewsApiResponse } from "../../interfaces";
 import styles from "./styles.module.css";
+import { useGetLatestNewsQuery } from "../../store/services/newsApi";
 
 const LatestNews = () => {
-  const { data, isLoading } = useFetch<NewsApiResponse, null>(getLatestNews);
+  const { data, isLoading } = useGetLatestNewsQuery(null);
 
   return (
     <section className={styles.section}>
