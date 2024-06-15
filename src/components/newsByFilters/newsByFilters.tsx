@@ -3,11 +3,10 @@ import { PAGE_SIZE, TOTAL_PAGES } from "../constants/constants";
 import { useDebounce } from "../healper/hooks/useDebounce";
 import { useFetch } from "../healper/hooks/useFetch";
 import { useFilters } from "../healper/hooks/useFilters";
-import { NewsApiResponse, ParamsType } from "../interfaces";
+import { NewsApiResponse, ParamsType } from "../../interfaces";
 import NewsFilters from "../newsFilters/newsFilters";
 import NewsList from "../newsList/newsList";
 import PaginationWrapper from "../paginationWrapper/paginationWrapper";
-
 import styles from "./styles.module.css";
 
 const NewsByFilters = () => {

@@ -1,7 +1,8 @@
 import { getCategories } from "../../api/apiNews";
+import { useTheme } from "../../context/ThemeContext";
 import Categories from "../categories/categories";
 import { useFetch } from "../healper/hooks/useFetch";
-import { CategoriesApiResponse, IFilters } from "../interfaces";
+import { CategoriesApiResponse, IFilters } from "../../interfaces";
 import Search from "../search/search";
 import Slider from "../slider/slider";
 import styles from "./styles.module.css";
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const NewsFilters = ({ filters, changeFilter }: Props) => {
+  const { isDark } = useTheme();
   const { data: dataCategories } = useFetch<CategoriesApiResponse, null>(
     getCategories
   );
@@ -19,7 +21,7 @@ const NewsFilters = ({ filters, changeFilter }: Props) => {
   return (
     <div className={styles.filter}>
       {dataCategories ? (
-        <Slider>
+        <Slider isDark={isDark}>
           <Categories
             categories={dataCategories.categories}
             selectedCategory={filters.category}
