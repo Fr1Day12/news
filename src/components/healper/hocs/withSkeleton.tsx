@@ -1,4 +1,4 @@
-import { DirectionType, SkeletonType } from "../../interfaces";
+import { DirectionType, SkeletonType } from "../../../interfaces";
 import Skeleton from "../../skeleton/skeleton";
 
 interface Props {
