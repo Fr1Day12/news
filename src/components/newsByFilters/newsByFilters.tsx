@@ -1,8 +1,8 @@
 import { TOTAL_PAGES } from "../../constants/constants";
-import { useDebounce } from "../healper/hooks/useDebounce";
-import NewsFilters from "../newsFilters/newsFilters";
-import NewsList from "../newsList/newsList";
-import PaginationWrapper from "../paginationWrapper/paginationWrapper";
+import { useDebounce } from "../../healper/hooks/useDebounce";
+import NewsFilters from "../NewsFilters/NewsFilters";
+import NewsList from "../NewsList/NewsList";
+import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
 import styles from "./styles.module.css";
 import { useGetNewsQuery } from "../../store/services/newsApi";
 import { useAppDispatch, useAppSelector } from "../../store";
