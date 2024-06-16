@@ -1,12 +1,12 @@
 import { TOTAL_PAGES } from "../../constants/constants";
-import { useDebounce } from "../healper/hooks/useDebounce";
-import NewsFilters from "../newsFilters/newsFilters";
-import NewsList from "../newsList/newsList";
-import PaginationWrapper from "../paginationWrapper/paginationWrapper";
+import { useDebounce } from "../../healper/hooks/useDebounce";
 import styles from "./styles.module.css";
 import { useGetNewsQuery } from "../../store/services/newsApi";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { setFilters } from "../../store/slices/newsSlice";
+import NewsFilters from "../NewsFilters/NewsFilters";
+import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
+import NewsListWithSkeleton from "../NewsList/NewsList";
 
 const NewsByFilters = () => {
   const dispatch = useAppDispatch();
@@ -53,7 +53,7 @@ const NewsByFilters = () => {
         handlePageClick={handlePageClick}
         totalPages={TOTAL_PAGES}
         currentPage={filters.page_number}>
-        <NewsList news={news} isLoading={isLoading} />
+        <NewsListWithSkeleton news={news} isLoading={isLoading} />
       </PaginationWrapper>
     </section>
   );

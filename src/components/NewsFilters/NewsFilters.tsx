@@ -1,8 +1,8 @@
 import { useTheme } from "../../context/ThemeContext";
-import Categories from "../categories/categories";
+import Categories from "../Categories/Categories";
 import { IFilters } from "../../interfaces";
-import Search from "../search/search";
-import Slider from "../slider/slider";
+import Search from "../Search/Search";
+import Slider from "../Slider/Slider";
 import styles from "./styles.module.css";
 import { useGetCategoriesQuery } from "../../store/services/newsApi";
 import { useAppDispatch } from "../../store";

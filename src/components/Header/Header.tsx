@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { formateDate } from "../healper/formateDate";
+import { formateDate } from "../../healper/formateDate";
 import styles from "./styles.module.css";
 import { themeIcons } from "../../assets";
 import { useTheme } from "../../context/ThemeContext";
