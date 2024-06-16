@@ -1,5 +1,5 @@
-import Header from "./components/header/header";
-import Main from "./pages/Main";
+import Header from "./components/Header/Header";
+import Main from "./pages/Main/Main";
 import { useTheme } from "./context/ThemeContext";
 
 function App() {

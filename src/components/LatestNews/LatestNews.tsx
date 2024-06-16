@@ -1,4 +1,4 @@
-import BannersList from "../bannersList/bannersList";
+import BannersList from "../BannersList/BannersList";
 import styles from "./styles.module.css";
 import { useGetLatestNewsQuery } from "../../store/services/newsApi";
 
