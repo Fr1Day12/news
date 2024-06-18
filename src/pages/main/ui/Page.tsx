@@ -4,13 +4,11 @@ import NewsByFilters from "@/pages/Main/ui/NewsByFilters/NewsByFilters";
 
 const MainPage = () => {
   return (
-    <>
-      <main className={styles.main}>
-        <LatestNews />
+    <main className={styles.main}>
+      <LatestNews />
 
-        <NewsByFilters />
-      </main>
-    </>
+      <NewsByFilters />
+    </main>
   );
 };
 
