@@ -3,6 +3,7 @@ import { formateDate } from "@/shared/healpers/formateDate";
 import styles from "./styles.module.css";
 import ThemeButton from "@/features/theme/ui/ThemeButton/ThemeButton";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [currentDate, setCurrentDate] = useState(() => formateDate(new Date()));
@@ -25,7 +26,10 @@ const Header = () => {
     <header
       className={`${styles.header} ${isDark ? styles.dark : styles.light}`}>
       <div className={styles.info}>
-        <h1 className={styles.title}>NEWS</h1>
+        <Link to={"/"}>
+          {" "}
+          <h1 className={styles.title}>NEWS</h1>{" "}
+        </Link>
         <p className={styles.date}>{currentDate}</p>
       </div>
       <ThemeButton />

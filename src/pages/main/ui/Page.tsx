@@ -1,8 +1,8 @@
-import LatestNews from "@/pages/Main/ui/LatestNews/LatestNews";
-import NewsByFilters from "@/pages/Main/ui/NewsByFilters/NewsByFilters";
+import LatestNews from "@/pages/main/ui/LatestNews/LatestNews";
+import NewsByFilters from "@/pages/main/ui/NewsByFilters/NewsByFilters";
 import styles from "./styles.module.css";
 
-const Page = () => {
+const MainPage = () => {
   return (
     <main className={styles.main}>
       <LatestNews />
@@ -12,4 +12,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default MainPage;
