@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { useGetNewsQuery } from "@/entities/news/api/newsApi";
 import { NewsFilters } from "@/widgets/news";
 import { useGetCategoriesQuery } from "@/entities/category/api/categoriesApi";
-import NewsListWithPagination from "@/pages/Main/ui/NewsListWithPagination/NewsListWithPagination";
+import NewsListWithPagination from "@/pages/main/ui/NewsListWithPagination/NewsListWithPagination";
 
 const NewsByFilters = () => {
   const filters = useAppSelector((state) => state.news.filters);

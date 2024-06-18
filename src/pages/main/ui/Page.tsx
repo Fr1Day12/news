@@ -1,6 +1,6 @@
-import LatestNews from "@/pages/Main/ui/LatestNews/LatestNews";
+import LatestNews from "@/pages/main/ui/LatestNews/LatestNews";
+import NewsByFilters from "@/pages/main/ui/NewsByFilters/NewsByFilters";
 import styles from "./styles.module.css";
-import NewsByFilters from "@/pages/Main/ui/NewsByFilters/NewsByFilters";
 
 const MainPage = () => {
   return (
