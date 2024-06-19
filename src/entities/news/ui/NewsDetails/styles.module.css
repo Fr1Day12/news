@@ -26,6 +26,12 @@
   color: #6b4eff;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
 @media (max-width: 768px) {
   .details {
     grid-template-columns: 1fr;
