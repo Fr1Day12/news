@@ -14,7 +14,8 @@ const NewsDetails = ({ item }: Props) => {
 
       <div className={styles.description}>
         <p>
-          {item.description} ({item.language}){" "}
+          {item.description} ({item.language.toLocaleUpperCase()})
+          <br />
           <a target="_blank" href={item.url}>
             Read more...
           </a>
@@ -22,7 +23,7 @@ const NewsDetails = ({ item }: Props) => {
         <p className={styles.extra}>
           {formatTimeAgo(item.published)} by {item.author}
         </p>
-        <ul>
+        <ul className={styles.tags}>
           {item.category.map((category) => {
             return (
               <button className={styles.active} key={category}>
